@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../css/login.css">
+    
 </head>
 
 <body>
@@ -36,7 +37,7 @@
             </div>
         </div>
         <div id="btnCerrarSesion">
-            <a href="../inicio.php">
+            <a >
                 <span>Salir</span>
                 <i style="font-size: 20px;margin:5%" class="bi bi-box-arrow-in-right"></i>
             </a>

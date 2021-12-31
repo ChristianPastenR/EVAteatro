@@ -16,6 +16,8 @@
         $resultados =$stmt->fetchAll();
         
         if ($resultados[0]['rut']!=null) {
+            session_start();
+            $_SESSION["usuario"] = $resultados[0]['nombre'];
             echo true;
         }else{
             echo false;
