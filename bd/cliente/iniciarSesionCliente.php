@@ -17,7 +17,7 @@
         
         if ($resultados[0]['rut']!=null) {
             session_start();
-            $_SESSION["usuario"] = $resultados[0]['nombre'];
+            $_SESSION["usuario"] = $resultados;
             echo true;
         }else{
             echo false;
