@@ -21,7 +21,7 @@ $(document).ready(function(){
                     contentType: false,
                     success: function (respuesta) {
                         if (respuesta == true) {
-                            alert("Exito");
+                            
                             $(location).attr('href','../../pages/cliente/inicio.php')
                         } else {
                             alert("Usuario no registrado");

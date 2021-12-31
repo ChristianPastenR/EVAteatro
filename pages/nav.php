@@ -40,6 +40,7 @@
                 <span>Login</span>
                 <i style="font-size: 20px;margin:5%" class="bi bi-box-arrow-in-right"></i>
             </a>
+            
         </div>
     </nav>
 

@@ -26,7 +26,7 @@
 
   </div>
 
-  <div id="formLogin">
+  <div id="formLogin" class="border border-1">
     <form>
       <h5 class="card-title">Inicio de sesion</h5><br>
       <div class="mb-3">
