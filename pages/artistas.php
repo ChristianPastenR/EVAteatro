@@ -8,19 +8,33 @@ require_once('../bd/conexion.php');
 require_once('../bd/artista/getArtistas.php');
 ?>
 
-<div style="width: 50%; text-align: center;margin: auto;">
 
-<form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-    <button class="btn btn-outline-success" type="button">Buscar</button>
-</form>
+<div style="width: 50%; text-align: left;margin: auto;">
+
+
 <br>
-<table class="table table-striped">
+
+
+
+
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+
+<table id="table" 
+data-toggle="table"
+  data-search="true"
+  data-search-text=""
+  data-pagination="true"
+  >
     <thead>
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Nacionalidad</th>
-            <th scope="col">Tipo</th>
+            <th scope="col" data-sortable="true">Nombre</th>
+            <th scope="col" data-sortable="true" >Nacionalidad</th>
+            <th scope="col"data-sortable="true" >Tipo</th>
         </tr>
     </thead>
     <tbody>
@@ -34,4 +48,15 @@ require_once('../bd/artista/getArtistas.php');
         ?>
     </tbody>
 </table>
+
+<script>
+  $(function() {
+    $('#table').bootstrapTable()
+  })
+</script>
+
+
+
+
+
 </div>

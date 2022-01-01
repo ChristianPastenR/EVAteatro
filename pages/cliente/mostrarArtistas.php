@@ -8,6 +8,7 @@ if (!isset($_SESSION['usuario'])) {
 ?>
 
 <?php include('../cliente/nav.php'); ?>
+
 <script src="../../dist/js/cliente/cerrarSesion.js"></script>
 <div>
     <h5 style="text-align: center;font-size: 50px;">Artistas</h5>
@@ -18,13 +19,9 @@ require_once('../../bd/conexion.php');
 require_once('../../bd/artista/getArtistas.php');
 ?>
 
-<div style="width: 50%; text-align: center;margin: auto;">
-
+<div style="width: 50%; text-align: left;margin: auto;">
 
 <br>
-
-
-
 
 <link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
 <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
@@ -32,28 +29,11 @@ require_once('../../bd/artista/getArtistas.php');
 <link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
 <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
 
-
-<script type="text/javascript" >
-
-function changePlaceholder() {
-
- $(".form-control.search-input").attr("placeholder", "Type a Location").val("").focus().blur();
-
-
-}
-
-</script>
-
-
-
-
-
-
-
 <table id="table" 
 data-toggle="table"
   data-search="true"
   data-search-text=""
+  data-pagination="true"
   >
     <thead>
         <tr>
@@ -79,8 +59,6 @@ data-toggle="table"
     $('#table').bootstrapTable()
   })
 </script>
-
-
 
 
 
