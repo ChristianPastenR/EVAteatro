@@ -43,7 +43,7 @@ require_once('../bd/cliente/getFunciones.php');
 
 
                 echo "<td>" . $fila['artistaFK'] . "</td>";
-                echo "<td><a id='iconoCandado' href=''><i class='bi bi-lock-fill'></i></a></td></tr>";
+                echo "<td><a class='iconoCandado' href=''><i class='bi bi-lock-fill'></i></a></td></tr>";
             }
             ?>
         </tbody>
