@@ -4,17 +4,11 @@ session_start();
 <?php
 if (!isset($_SESSION['usuario'])) {
     header('location: ../inicio.php');
-}else{
-
-    
-    
 }
 ?>
 
-
-
-
 <?php include('../cliente/nav.php'); ?>
+<script src="../../dist/js/cliente/cerrarSesion.js"></script>
 <div>
     <h5 style="text-align: center;font-size: 50px;">Artistas</h5>
 </div>
@@ -26,17 +20,46 @@ require_once('../../bd/artista/getArtistas.php');
 
 <div style="width: 50%; text-align: center;margin: auto;">
 
-<form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
-    <button class="btn btn-outline-success" type="button">Buscar</button>
-</form>
+
 <br>
-<table class="table table-hover">
+
+
+
+
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+
+<script type="text/javascript" >
+
+function changePlaceholder() {
+
+ $(".form-control.search-input").attr("placeholder", "Type a Location").val("").focus().blur();
+
+
+}
+
+</script>
+
+
+
+
+
+
+
+<table id="table" 
+data-toggle="table"
+  data-search="true"
+  data-search-text=""
+  >
     <thead>
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Nacionalidad</th>
-            <th scope="col">Tipo</th>
+            <th scope="col" data-sortable="true">Nombre</th>
+            <th scope="col" data-sortable="true" >Nacionalidad</th>
+            <th scope="col"data-sortable="true" >Tipo</th>
         </tr>
     </thead>
     <tbody>
@@ -50,4 +73,17 @@ require_once('../../bd/artista/getArtistas.php');
         ?>
     </tbody>
 </table>
+
+<script>
+  $(function() {
+    $('#table').bootstrapTable()
+  })
+</script>
+
+
+
+
+
+
+
 </div>

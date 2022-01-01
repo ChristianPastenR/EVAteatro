@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <?php
     
     ?>
@@ -45,11 +48,12 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <li><a class="dropdown-item" href="">Mi cuenta</a></li>
+                            <li><a class="dropdown-item" href="miCuenta.php">Mi cuenta</a></li>
+                            <li><a class="dropdown-item" href="">Historial</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a id="btnCerrarSesion" class="dropdown-item">Salir</a></li>
+                            <li><a  class="dropdown-item" data-toggle="modal" data-target="#myModal">Salir</a></li>
                         </ul>
                     </li>
 
@@ -57,6 +61,32 @@
 
             </div>
         </div>
+        </nav>
+
+
+
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Esta apunto de cerrar sesión</h4>
+      </div>
+      <div class="modal-body">
+        <p>Cualquier cambio no confirmado sera descartado.</p>
+      </div>
+      <div class="modal-footer">
+      <button id="" type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
+        <button id="btnCerrarSesion" type="button" class="btn btn-default" data-dismiss="modal">Confirmar</button>
+        
+    </div>
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -73,8 +103,7 @@
 
 
 
-
-    </nav>
+    
 
 
 </body>

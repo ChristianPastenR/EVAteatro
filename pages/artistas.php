@@ -15,7 +15,7 @@ require_once('../bd/artista/getArtistas.php');
     <button class="btn btn-outline-success" type="button">Buscar</button>
 </form>
 <br>
-<table class="table table-hover">
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Nombre</th>
