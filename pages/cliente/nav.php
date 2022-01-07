@@ -22,12 +22,13 @@
     <script src="../../dist/js/cliente/cerrarSesion.js"></script>
     <?php
     session_start();
-    ?>
-    <?php
+
+
     if (!isset($_SESSION['usuario'])) {
         header('location: ../index.php');
     }
     ?>
+    
 </head>
 
 <body>
@@ -51,13 +52,21 @@
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo $_SESSION['usuario'][0]['nombre']; ?>
                             <?php echo $_SESSION['usuario'][0]['apellido']; ?>
-                            
+
+
+
 
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+                            <?php
+                            $admin = $_SESSION['usuario'][0]['admin'];
+                            if ($admin == 1) {
+                                echo "<li><a class='dropdown-item' href='adminPanel.php'>Admin panel</a></li>";
+                            }
+                            ?>
                             <li><a class="dropdown-item" href="miCuenta.php">Mi cuenta</a></li>
                             <li><a class="dropdown-item" href="verhistorial.php">Historial</a></li>
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
