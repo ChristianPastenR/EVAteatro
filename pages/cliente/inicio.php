@@ -1,15 +1,4 @@
-<?php
-session_start();
-?>
-<?php
-if (!isset($_SESSION['usuario'])) {
-    header('location: ../inicio.php');
-}else{
 
-
-    
-}
-?>
 
 
 <link rel="stylesheet" href="../../css/login.css">

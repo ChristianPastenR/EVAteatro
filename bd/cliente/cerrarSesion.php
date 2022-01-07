@@ -7,5 +7,5 @@ session_unset();
 // destroy the session
 session_destroy();
 
-header('Location: ../../pages/inicio.php');
+header('Location: ../../pages/index.php');
 ?>

@@ -1,15 +1,8 @@
-<?php
-session_start();
-?>
-<?php
-if (!isset($_SESSION['usuario'])) {
-    header('location: ../inicio.php');
-}
-?>
+
 
 <?php include('../cliente/nav.php'); ?>
 
-<script src="../../dist/js/cliente/cerrarSesion.js"></script>
+
 <div>
     <h5 style="text-align: center;font-size: 50px;">Artistas</h5>
 </div>

@@ -1,15 +1,4 @@
-<?php
-session_start();
-?>
-<?php
-if (!isset($_SESSION['usuario'])) {
-    header('location: ../inicio.php');
-}else{
 
-    
-    
-}
-?>
 <link rel="stylesheet" href="../../css/login.css">
 <?php include('nav.php'); 
 ?>
@@ -52,11 +41,18 @@ if (!isset($_SESSION['usuario'])) {
         <label for="exampleInputPassword1" class="form-label">Para confirmar cambios ingrese su clave</label>
         <input type="password" class="form-control" id="iContrasenia" >
       </div><br>
-      <button id="" type="button" class="btn btn-primary">Descartar</button>
+      <button id="" type="button" class="btn btn-primary" onclick="descartar()">Descartar</button>
       <button id="" type="button" class="btn btn-success">Confirmar</button>
     </form>
   </div>
 </div>
+<script>
+  function descartar() {
+    alert("Los cambios no seran guardados");
+    window.location.href = "inicio.php";
+  }
+  
+</script>
 
 
 

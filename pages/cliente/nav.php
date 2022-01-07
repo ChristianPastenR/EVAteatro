@@ -16,10 +16,17 @@
 
     <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--  SCRIPT BTN CERRAR SESION -->
+    <script src="../../dist/js/cliente/cerrarSesion.js"></script>
     <?php
-    
+    session_start();
+    ?>
+    <?php
+    if (!isset($_SESSION['usuario'])) {
+        header('location: ../index.php');
+    }
     ?>
 </head>
 
@@ -42,18 +49,19 @@
 
                     <li style="position: absolute; right: 1%;" id="drop" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?php echo $_SESSION['usuario'][0]['nombre']; ?>
-                        <?php echo $_SESSION['usuario'][0]['apellido']; ?>
-                       
+                            <?php echo $_SESSION['usuario'][0]['nombre']; ?>
+                            <?php echo $_SESSION['usuario'][0]['apellido']; ?>
+                            
+
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <li><a class="dropdown-item" href="miCuenta.php">Mi cuenta</a></li>
-                            <li><a class="dropdown-item" href="">Historial</a></li>
+                            <li><a class="dropdown-item" href="verhistorial.php">Historial</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a  class="dropdown-item" data-toggle="modal" data-target="#myModal">Salir</a></li>
+                            <li><a class="dropdown-item" data-toggle="modal" data-target="#myModal">Salir</a></li>
                         </ul>
                     </li>
 
@@ -61,32 +69,32 @@
 
             </div>
         </div>
-        </nav>
+    </nav>
 
 
 
     <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <h4 class="modal-title">Esta apunto de cerrar sesión</h4>
-      </div>
-      <div class="modal-body">
-        <p>Cualquier cambio no confirmado sera descartado.</p>
-      </div>
-      <div class="modal-footer">
-      <button id="" type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
-        <button id="btnCerrarSesion" type="button" class="btn btn-default" data-dismiss="modal">Confirmar</button>
-        
-    </div>
-    </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
 
-  </div>
-</div>
+                    <h4 class="modal-title">Esta apunto de cerrar sesión</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Cualquier cambio no confirmado sera descartado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="" type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
+                    <button id="btnCerrarSesion" type="button" class="btn btn-default" data-dismiss="modal">Confirmar</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </body>

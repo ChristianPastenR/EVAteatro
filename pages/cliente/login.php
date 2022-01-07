@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="../../css/login.css">
   
   <script src="../../dist/js/cliente/iniciarSesionCliente.js"></script>
+  <?php
+session_start();
+?>
+<?php
+if (isset($_SESSION['usuario'])) {
+    header('location: inicio.php');
+}
+?>
 </head>
 
 <body>
